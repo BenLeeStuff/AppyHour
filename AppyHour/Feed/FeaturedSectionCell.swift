@@ -10,6 +10,8 @@ import UIKit
 
 class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    var feedController: FeedController?
+    
     let cellId = "featuredSectionCell"
     
     let sectionCollectionView: UICollectionView = {
@@ -60,9 +62,7 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = sectionCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeaturedCell
             return cell
-        
-
-        
+           
         return cell
 
  
@@ -78,6 +78,13 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let details = DetailsViewController()
+        
+        feedController?.showDetailForHappyHour()
+        print("Cell selected")
     }
     
     required init?(coder aDecoder: NSCoder) {

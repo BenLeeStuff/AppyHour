@@ -32,6 +32,10 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
         feedCollectionView.register(RecommendedSectionCell.self, forCellWithReuseIdentifier: recommendedCellId)
     }
 
+    @IBAction func addData(_ sender: Any) {
+        performSegue(withIdentifier: "toAddData", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,10 +45,15 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 3
     }
     
+    func showDetailForHappyHour() {
+        performSegue(withIdentifier: "toDetails", sender: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: featuredCellId, for: indexPath) as! FeaturedSectionCell
+                cell.feedController = self
             return cell
         } else if indexPath.item == 1 {
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: goingOnNowCellId, for: indexPath) as! GoingOnNowSectionCell

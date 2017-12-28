@@ -9,14 +9,22 @@
 import Foundation
 import UIKit
 
-class LocationImageCell: UICollectionViewCell {
+class LocationDetailsImageCell: UICollectionViewCell {
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+       
+    }
+    
+    fileprivate func setupViews() {
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
 }

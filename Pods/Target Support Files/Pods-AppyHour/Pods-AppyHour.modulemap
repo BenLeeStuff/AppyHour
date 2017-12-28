@@ -1,0 +1,6 @@
+framework module Pods_AppyHour {
+  umbrella header "Pods-AppyHour-umbrella.h"
+
+  export *
+  module * { export * }
+}
