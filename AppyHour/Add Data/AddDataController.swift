@@ -14,7 +14,6 @@ class AddDataController: UIViewController,   UIImagePickerControllerDelegate, UI
     
     let addDataCellId = "addDataCell"
     
-    @IBOutlet weak var confirmationView: UIView!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var locationNameTextField: UITextField!
     @IBOutlet weak var locationPhoneNumberTextField: UITextField!
@@ -23,14 +22,24 @@ class AddDataController: UIViewController,   UIImagePickerControllerDelegate, UI
     @IBOutlet weak var locationAddressTextField: UITextField!
     @IBOutlet weak var locationHoursTextField: UITextField!
     
+    //HappyHour 1 Start Time
+
+    
+    // HappyHour 1 End Time
+
+    
+    //HappyHour 2 Start Time
+
+    
+    // HappyHour 2 End Time
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
     
     fileprivate func setupViews() {
-        confirmationView.layer.cornerRadius = 10
-        confirmationView.isHidden = true
         
     }
     
@@ -85,24 +94,10 @@ class AddDataController: UIViewController,   UIImagePickerControllerDelegate, UI
                     }
                     
                     print("Successfully saved values to database")
-                    self.showCompletionView()
+                    self.navigationController?.popViewController(animated: true)
 
             }
         }
     }
     
-    fileprivate func showCompletionView() {
-        confirmationView.isHidden = false
-        UIView.animate(withDuration: 1, animations: {
-            self.confirmationView.alpha = 1
-        }) { (true) in
-            UIView.animate(withDuration: 1, animations: {
-                self.confirmationView.alpha = 1
-            }, completion: { (true) in
-                print("completed")
-                self.navigationController?.popViewController(animated: true)
-            })
-        }
-        
-    }
 }
