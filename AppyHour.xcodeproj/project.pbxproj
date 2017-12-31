@@ -16,6 +16,9 @@
 		783EAE861FF0C9D200746196 /* AppyHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EAE851FF0C9D200746196 /* AppyHourTests.swift */; };
 		783EAE911FF0C9D200746196 /* AppyHourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EAE901FF0C9D200746196 /* AppyHourUITests.swift */; };
 		783EAE9F1FF0CABC00746196 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EAE9E1FF0CABB00746196 /* Extensions.swift */; };
+		785714BE1FF4E66B00E1C20D /* HappyHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785714BD1FF4E66B00E1C20D /* HappyHour.swift */; };
+		785714C21FF611B800E1C20D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785714C11FF611B800E1C20D /* CustomImageView.swift */; };
+		785714C41FF7384B00E1C20D /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785714C31FF7384B00E1C20D /* DetailsController.swift */; };
 		7857B9881FF0CCFD001F2815 /* orkney in Resources */ = {isa = PBXBuildFile; fileRef = 7857B9871FF0CCFD001F2815 /* orkney */; };
 		7857B98A1FF0CE45001F2815 /* FeaturedSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857B9891FF0CE45001F2815 /* FeaturedSectionCell.swift */; };
 		789AB8A51FF337740048DBB6 /* AddDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789AB8A41FF337740048DBB6 /* AddDataController.swift */; };
@@ -29,7 +32,6 @@
 		78A3CD3A1FF1D69100BDA624 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD341FF1D69100BDA624 /* UIView+Shadow.swift */; };
 		78A3CD3B1FF1D69100BDA624 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD351FF1D69100BDA624 /* UIImage+Size.swift */; };
 		78A3CD3C1FF1D69100BDA624 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD361FF1D69100BDA624 /* UIImageEffects.swift */; };
-		78A3CD411FF1DF2E00BDA624 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD401FF1DF2E00BDA624 /* DetailsViewController.swift */; };
 		78A3CD431FF1DF9C00BDA624 /* LocationDetailsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD421FF1DF9C00BDA624 /* LocationDetailsImageCell.swift */; };
 		78A3CD451FF1EAE800BDA624 /* MapDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD441FF1EAE800BDA624 /* MapDetailsCell.swift */; };
 		78A3CD471FF1ED5B00BDA624 /* Orkney-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78A3CD461FF1ED5A00BDA624 /* Orkney-Bold.otf */; };
@@ -75,6 +77,9 @@
 		783EAE901FF0C9D200746196 /* AppyHourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppyHourUITests.swift; sourceTree = "<group>"; };
 		783EAE921FF0C9D200746196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783EAE9E1FF0CABB00746196 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		785714BD1FF4E66B00E1C20D /* HappyHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyHour.swift; sourceTree = "<group>"; };
+		785714C11FF611B800E1C20D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		785714C31FF7384B00E1C20D /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		7857B9871FF0CCFD001F2815 /* orkney */ = {isa = PBXFileReference; lastKnownFileType = folder; path = orkney; sourceTree = "<group>"; };
 		7857B9891FF0CE45001F2815 /* FeaturedSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionCell.swift; sourceTree = "<group>"; };
 		789AB8A41FF337740048DBB6 /* AddDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataController.swift; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		78A3CD341FF1D69100BDA624 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		78A3CD351FF1D69100BDA624 /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		78A3CD361FF1D69100BDA624 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
-		78A3CD401FF1DF2E00BDA624 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		78A3CD421FF1DF9C00BDA624 /* LocationDetailsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsImageCell.swift; sourceTree = "<group>"; };
 		78A3CD441FF1EAE800BDA624 /* MapDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsCell.swift; sourceTree = "<group>"; };
 		78A3CD461FF1ED5A00BDA624 /* Orkney-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orkney-Bold.otf"; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				783EAE791FF0C9D200746196 /* LaunchScreen.storyboard */,
 				783EAE7C1FF0C9D200746196 /* Info.plist */,
 				783EAE9E1FF0CABB00746196 /* Extensions.swift */,
+				785714BD1FF4E66B00E1C20D /* HappyHour.swift */,
+				785714C11FF611B800E1C20D /* CustomImageView.swift */,
 			);
 			path = AppyHour;
 			sourceTree = "<group>";
@@ -243,7 +249,7 @@
 		78A3CD3F1FF1DDE000BDA624 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				78A3CD401FF1DF2E00BDA624 /* DetailsViewController.swift */,
+				785714C31FF7384B00E1C20D /* DetailsController.swift */,
 				78A3CD421FF1DF9C00BDA624 /* LocationDetailsImageCell.swift */,
 				78A3CD441FF1EAE800BDA624 /* MapDetailsCell.swift */,
 				78A3CD4A1FF1FB5D00BDA624 /* LocationDetailsCell.swift */,
@@ -552,11 +558,14 @@
 				78A3CD391FF1D69100BDA624 /* ShadowView.swift in Sources */,
 				789AB8A51FF337740048DBB6 /* AddDataController.swift in Sources */,
 				78A3CD211FF1A4F600BDA624 /* GoinOnNowSectionCell.swift in Sources */,
+				785714C41FF7384B00E1C20D /* DetailsController.swift in Sources */,
 				78A3CD4B1FF1FB5D00BDA624 /* LocationDetailsCell.swift in Sources */,
 				78A3CD231FF1B73000BDA624 /* RecommendedSectionCell.swift in Sources */,
 				783EAE731FF0C9D200746196 /* FeedController.swift in Sources */,
+				785714C21FF611B800E1C20D /* CustomImageView.swift in Sources */,
 				789AB8A71FF4B2950048DBB6 /* AddDataCell.swift in Sources */,
 				78A3CD3B1FF1D69100BDA624 /* UIImage+Size.swift in Sources */,
+				785714BE1FF4E66B00E1C20D /* HappyHour.swift in Sources */,
 				78A3CD371FF1D69100BDA624 /* UIView+Image.swift in Sources */,
 				7857B98A1FF0CE45001F2815 /* FeaturedSectionCell.swift in Sources */,
 				78A3CD3A1FF1D69100BDA624 /* UIView+Shadow.swift in Sources */,
@@ -566,7 +575,6 @@
 				78A3CD4F1FF21D5D00BDA624 /* ReviewCell.swift in Sources */,
 				783EAE9F1FF0CABC00746196 /* Extensions.swift in Sources */,
 				783EAE711FF0C9D200746196 /* AppDelegate.swift in Sources */,
-				78A3CD411FF1DF2E00BDA624 /* DetailsViewController.swift in Sources */,
 				78A3CD381FF1D69100BDA624 /* ShadowView+BlurProcess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,31 @@
 
 import Foundation
 import UIKit
+import Firebase
+
+//extension Database {
+//    static func fetchHappyHour(id: String, completion: @escaping (HappyHour) -> ()) {
+//        print("Fetching HappyHour with id ", id)
+//        Database.database().reference().child("HappyHour").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let happyHourDictionary = snapshot.value as? [String: Any] else {return}
+//            
+//            let happyHour = User(uid: uid, dictionary: userDictionary)
+//            //self.fetchPostsWithUser(user: user)
+//            print("username: ", user.username)
+//            
+//            completion(user)
+//        }) { (err) in
+//            print("Failed to fetch user", err)
+//        }
+//    }
+//}
 
 extension UIColor {
     
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor{
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
     }
+    
 }
 
 extension UIView {

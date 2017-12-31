@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -39,6 +40,32 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        fetchHappyHours()
+        
+    }
+    
+    var happyHours = [HappyHour]()
+    
+    fileprivate func fetchHappyHours() {
+        
+        let ref = Database.database().reference().child("HappyHour")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let dictionaries = snapshot.value as? [String : Any] else {return}
+            dictionaries.forEach({ (key, value) in
+                
+                guard let dictionary = value as? [String : Any] else {return}
+                let imageUrl = dictionary["LocationImageUrl"] as? String
+                
+                let happyHour = HappyHour(dictionary: dictionary)
+                self.happyHours.append(happyHour)
+
+            })
+            
+            self.sectionCollectionView.reloadData()
+        }) { (err) in
+            print("Failed to fetch happy hour")
+        }
     }
     
     func setupViews() {
@@ -56,15 +83,15 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        print("NUMBER OF HAPPY HOURS: ", happyHours.count)
+        return happyHours.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = sectionCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeaturedCell
+            cell.happyHour = happyHours[indexPath.item]
             return cell
-           
-        return cell
-
+        
  
     }
     
@@ -81,10 +108,10 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let details = DetailsViewController()
         
-        feedController?.showDetailForHappyHour()
-        print("Cell selected")
+        
+        feedController?.showDetailForHappyHour(happyHour: happyHours[indexPath.item])
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,6 +121,20 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
 }
 
 class FeaturedCell: UICollectionViewCell {
+    
+    var happyHour: HappyHour? {
+        didSet {
+            guard  let imageUrl = happyHour?.locationImageUrl else {return}
+            locationImageView.loadImage(urlString: imageUrl)
+            shadowView.updateShadow()
+            
+            guard let name = happyHour?.locationName else {return}
+            locationNameLabel.text = name
+            
+            // still need to implement city code for UI
+            
+        }
+    }
     
     let shadowView: ShadowView = {
         let view = ShadowView()
@@ -114,8 +155,8 @@ class FeaturedCell: UICollectionViewCell {
     }()
     
     
-    let locationImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "restaurant "))
+    let locationImageView: CustomImageView = {
+        let imageView = CustomImageView()
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill

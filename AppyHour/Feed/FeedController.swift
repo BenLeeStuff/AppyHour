@@ -8,11 +8,12 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class FeedController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var feedCollectionView: UICollectionView!
-    
+
     let featuredCellId = "feedCell"
     let goingOnNowCellId = "goingOnNowSectionCell"
     let recommendedCellId = "recommendedSectionCell"
@@ -22,7 +23,12 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     fileprivate func setupViews() {
+        navigationController?.isNavigationBarHidden = true
         feedCollectionView.delegate = self
         feedCollectionView.dataSource = self
         feedCollectionView.register(FeaturedSectionCell.self, forCellWithReuseIdentifier: featuredCellId)
@@ -34,6 +40,7 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBAction func addData(_ sender: Any) {
         performSegue(withIdentifier: "toAddData", sender: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,17 +49,23 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return 3
     }
     
-    func showDetailForHappyHour() {
-        performSegue(withIdentifier: "toDetails", sender: nil)
+    func showDetailForHappyHour(happyHour: HappyHour) {
+        let layout = UICollectionViewFlowLayout()
+        let detailsController = DetailsController(collectionViewLayout: layout)
+        detailsController.happyHour = happyHour
+        navigationController?.pushViewController(detailsController, animated: true)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: featuredCellId, for: indexPath) as! FeaturedSectionCell
+                //cell.happyHour = happyHours[indexPath.item]
                 cell.feedController = self
             return cell
         } else if indexPath.item == 1 {
@@ -62,8 +75,6 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: recommendedCellId, for: indexPath) as! RecommendedSectionCell
             return cell
         }
-
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

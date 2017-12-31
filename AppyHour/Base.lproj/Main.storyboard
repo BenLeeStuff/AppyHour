@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Orkney Regular.otf">
+        <array key="Orkney Regular.ttf">
             <string>Orkney-Regular</string>
         </array>
         <array key="Orkney-Bold.otf">
@@ -166,8 +166,8 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="mcK-L1-TVB" id="hML-yc-ncG"/>
-                        <segue destination="xeY-jv-mlj" kind="show" identifier="toDetails" id="kSL-OH-CYJ"/>
                         <segue destination="8ib-Kp-5qW" kind="show" identifier="toAddData" id="RpB-HJ-vpj"/>
+                        <segue destination="ytG-8G-Ca9" kind="show" identifier="toDetails" id="OlP-Al-LOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -399,350 +399,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSI-IB-WT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="-1485"/>
+            <point key="canvasLocation" x="887" y="-879"/>
         </scene>
-        <!--Details View Controller-->
-        <scene sceneID="Elm-uY-WTq">
+        <!--Collection View Controller-->
+        <scene sceneID="HSV-Ew-5Aq">
             <objects>
-                <viewController id="xeY-jv-mlj" customClass="DetailsViewController" customModule="AppyHour" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hKc-Z5-A2I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1230"/>
+                <collectionViewController id="ytG-8G-Ca9" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="YJT-vu-YBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-3Q-8Tw">
-                                <rect key="frame" x="0.0" y="-20" width="375" height="1250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0cw-FE-bqR">
-                                    <size key="itemSize" width="375" height="240"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationDetailsImageCell" id="w97-Sa-QEt" customClass="LocationDetailsImageCell" customModule="AppyHour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant4" translatesAutoresizingMaskIntoConstraints="NO" id="XHW-YQ-3io">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="Q72-Hz-oqs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purple Cafe and Wine Bar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-4v-3rW">
-                                                    <rect key="frame" x="33" y="148" width="309" height="22"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Bold" family="Orkney" pointSize="22"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Q72-Hz-oqs" secondAttribute="trailing" id="5qr-lq-Z1j"/>
-                                            <constraint firstAttribute="trailing" secondItem="XHW-YQ-3io" secondAttribute="trailing" id="85m-37-4eF"/>
-                                            <constraint firstAttribute="bottom" secondItem="Q72-Hz-oqs" secondAttribute="bottom" id="91f-Nj-Njs"/>
-                                            <constraint firstItem="XHW-YQ-3io" firstAttribute="top" secondItem="w97-Sa-QEt" secondAttribute="top" id="AFq-Qq-pJi"/>
-                                            <constraint firstItem="XHW-YQ-3io" firstAttribute="leading" secondItem="w97-Sa-QEt" secondAttribute="leading" id="Wh4-gB-khv"/>
-                                            <constraint firstItem="Q72-Hz-oqs" firstAttribute="top" secondItem="w97-Sa-QEt" secondAttribute="top" id="Z38-CP-FFh"/>
-                                            <constraint firstItem="YpA-4v-3rW" firstAttribute="top" secondItem="w97-Sa-QEt" secondAttribute="topMargin" constant="140" id="a5g-3b-i1e"/>
-                                            <constraint firstItem="YpA-4v-3rW" firstAttribute="leading" secondItem="w97-Sa-QEt" secondAttribute="leadingMargin" constant="25" id="aST-H8-CtN"/>
-                                            <constraint firstAttribute="bottom" secondItem="XHW-YQ-3io" secondAttribute="bottom" id="bFd-oS-6G7"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="YpA-4v-3rW" secondAttribute="trailing" constant="25" id="cru-9U-98O"/>
-                                            <constraint firstItem="Q72-Hz-oqs" firstAttribute="leading" secondItem="w97-Sa-QEt" secondAttribute="leading" id="qGE-sc-Fls"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mapDetailsCell" id="GWZ-4N-0Gx" customClass="MapDetailsCell" customModule="AppyHour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="375" height="125"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EIV-nt-1uZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
-                                                </mapView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAG-Tu-QAA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-2w-iLL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="430 106th Ave NE, Bellevue, WA 98004" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-eJ-b54">
-                                                            <rect key="frame" x="25" y="21" width="155" height="34"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="155" id="lu1-1y-0ji"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="14"/>
-                                                            <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edi-d4-FCU">
-                                                            <rect key="frame" x="25" y="75" width="120" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="qmJ-S7-3Li"/>
-                                                                <constraint firstAttribute="height" constant="40" id="v3F-7V-c1m"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="14"/>
-                                                            <state key="normal" title="   Get Directions" image="getDirections">
-                                                                <color key="titleColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sz9-ZE-hwW">
-                                                            <rect key="frame" x="215" y="75" width="80" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="80" id="Wjc-gm-6zk"/>
-                                                                <constraint firstAttribute="height" constant="40" id="xer-hq-Ij2"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="14"/>
-                                                            <state key="normal" title="   Call" image="call">
-                                                                <color key="titleColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="SXJ-2w-iLL" firstAttribute="top" secondItem="aAG-Tu-QAA" secondAttribute="top" id="46U-9K-EFU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Sz9-ZE-hwW" secondAttribute="trailing" constant="80" id="89o-DR-tfi"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Edi-d4-FCU" secondAttribute="bottom" constant="10" id="Ebc-ij-7JR"/>
-                                                        <constraint firstAttribute="bottom" secondItem="SXJ-2w-iLL" secondAttribute="bottom" id="IaT-iw-c9M"/>
-                                                        <constraint firstItem="FvW-eJ-b54" firstAttribute="leading" secondItem="aAG-Tu-QAA" secondAttribute="leading" constant="25" id="Y1Y-ev-NpY"/>
-                                                        <constraint firstItem="SXJ-2w-iLL" firstAttribute="leading" secondItem="aAG-Tu-QAA" secondAttribute="leading" id="ZBb-fp-aKq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="SXJ-2w-iLL" secondAttribute="trailing" id="djM-Fq-cc4"/>
-                                                        <constraint firstItem="FvW-eJ-b54" firstAttribute="top" secondItem="aAG-Tu-QAA" secondAttribute="top" constant="21" id="mRo-To-4Ic"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Sz9-ZE-hwW" secondAttribute="bottom" constant="10" id="yOx-Ic-JMK"/>
-                                                        <constraint firstItem="Edi-d4-FCU" firstAttribute="leading" secondItem="aAG-Tu-QAA" secondAttribute="leading" constant="25" id="zbr-4R-xDv"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="aAG-Tu-QAA" secondAttribute="trailing" id="EcK-N0-FIT"/>
-                                            <constraint firstItem="EIV-nt-1uZ" firstAttribute="leading" secondItem="GWZ-4N-0Gx" secondAttribute="leading" id="MX9-48-DbS"/>
-                                            <constraint firstAttribute="trailing" secondItem="EIV-nt-1uZ" secondAttribute="trailing" id="PV3-JO-5os"/>
-                                            <constraint firstAttribute="bottom" secondItem="aAG-Tu-QAA" secondAttribute="bottom" id="RX8-Ic-vPu"/>
-                                            <constraint firstAttribute="bottom" secondItem="EIV-nt-1uZ" secondAttribute="bottom" id="XCK-PC-K3A"/>
-                                            <constraint firstItem="EIV-nt-1uZ" firstAttribute="top" secondItem="GWZ-4N-0Gx" secondAttribute="top" id="kKu-mt-Tb5"/>
-                                            <constraint firstItem="aAG-Tu-QAA" firstAttribute="top" secondItem="GWZ-4N-0Gx" secondAttribute="top" id="mo8-QN-buT"/>
-                                            <constraint firstItem="aAG-Tu-QAA" firstAttribute="leading" secondItem="GWZ-4N-0Gx" secondAttribute="leading" id="pLl-3r-JPj"/>
-                                        </constraints>
-                                        <size key="customSize" width="375" height="125"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationDetailsCell" id="FcF-sB-UBd" customClass="LocationDetailsCell" customModule="AppyHour">
-                                        <rect key="frame" x="0.0" y="365" width="375" height="315"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stylish cafe with high ceiling &amp; iron fixtures serving many wines plus small plates &amp; heartier fare." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-QJ-mLg">
-                                                    <rect key="frame" x="25" y="33" width="317" height="54"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="15"/>
-                                                    <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm9-ML-aaL">
-                                                    <rect key="frame" x="25" y="112" width="103.5" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Bold" family="Orkney" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily: 3:00 PM - 6:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjP-mn-dxe">
-                                                    <rect key="frame" x="25" y="140" width="317" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="15"/>
-                                                    <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIY-1d-PIS">
-                                                    <rect key="frame" x="25" y="183" width="317" height="72"/>
-                                                    <string key="text">$5 Beers on tap.
-$4 Coors Light Choices
-$4 Bud Light Choices
-$5 Wine Selections (by the glass).</string>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="15"/>
-                                                    <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-Vx-D03">
-                                                    <rect key="frame" x="276" y="102" width="99" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="50Z-MT-93K"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="13"/>
-                                                    <state key="normal" title="Edit Happy Hour">
-                                                        <color key="titleColor" red="0.95294117647058818" green="0.27450980392156865" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="BjP-mn-dxe" firstAttribute="leading" secondItem="FcF-sB-UBd" secondAttribute="leading" constant="25" id="1OD-kp-dLP"/>
-                                            <constraint firstAttribute="trailing" secondItem="A14-Vx-D03" secondAttribute="trailing" id="4xi-Hw-F8f"/>
-                                            <constraint firstItem="Mm9-ML-aaL" firstAttribute="leading" secondItem="FcF-sB-UBd" secondAttribute="leading" constant="25" id="5on-QH-nol"/>
-                                            <constraint firstItem="BjP-mn-dxe" firstAttribute="top" secondItem="Mm9-ML-aaL" secondAttribute="bottom" constant="10" id="EhA-uY-dXB"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="cIY-1d-PIS" secondAttribute="trailing" constant="25" id="O0e-GI-z21"/>
-                                            <constraint firstItem="Snf-QJ-mLg" firstAttribute="top" secondItem="FcF-sB-UBd" secondAttribute="topMargin" constant="25" id="Rro-4v-fEz"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="BjP-mn-dxe" secondAttribute="trailing" constant="25" id="V1n-oS-FcV"/>
-                                            <constraint firstItem="cIY-1d-PIS" firstAttribute="leading" secondItem="FcF-sB-UBd" secondAttribute="leading" constant="25" id="WlP-44-J5o"/>
-                                            <constraint firstItem="A14-Vx-D03" firstAttribute="top" secondItem="Snf-QJ-mLg" secondAttribute="bottom" constant="15" id="cjU-xD-a6v"/>
-                                            <constraint firstItem="cIY-1d-PIS" firstAttribute="top" secondItem="BjP-mn-dxe" secondAttribute="bottom" constant="25" id="giu-mj-pqE"/>
-                                            <constraint firstItem="Snf-QJ-mLg" firstAttribute="leading" secondItem="FcF-sB-UBd" secondAttribute="leading" constant="25" id="rxW-ne-gGe"/>
-                                            <constraint firstItem="Mm9-ML-aaL" firstAttribute="top" secondItem="Snf-QJ-mLg" secondAttribute="bottom" constant="25" id="woS-X8-pSv"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Snf-QJ-mLg" secondAttribute="trailing" constant="25" id="ycP-qL-Zm5"/>
-                                        </constraints>
-                                        <size key="customSize" width="375" height="315"/>
-                                        <connections>
-                                            <outlet property="editHappyHourButton" destination="A14-Vx-D03" id="jsV-Ul-dQD"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewsTitleCell" id="TWX-ll-Ybm" customClass="ReviewsTitleCell" customModule="AppyHour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="680" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Hour Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZL-8m-AZI">
-                                                    <rect key="frame" x="25" y="21" width="175.5" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Bold" family="Orkney" pointSize="18"/>
-                                                    <color key="textColor" red="0.19607843137254902" green="0.23137254901960785" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="7hu-Mc-wei">
-                                                    <rect key="frame" x="25" y="47" width="129" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="129" id="ZZN-Rv-AeB"/>
-                                                        <constraint firstAttribute="height" constant="19" id="c2A-ns-H89"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-lm-cJC">
-                                                    <rect key="frame" x="25" y="79" width="325" height="1"/>
-                                                    <color key="backgroundColor" red="0.6588235294117647" green="0.71372549019607845" blue="0.78431372549019607" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="hFn-Jk-Emi"/>
-                                                    </constraints>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onj-si-ISi">
-                                                    <rect key="frame" x="251" y="10" width="99" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="4Xy-kT-3Er"/>
-                                                        <constraint firstAttribute="width" constant="99" id="wGK-8J-49p"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="13"/>
-                                                    <state key="normal" title="Leave a review">
-                                                        <color key="titleColor" red="0.95294117649999999" green="0.27450980390000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="Qum-lm-cJC" firstAttribute="leading" secondItem="TWX-ll-Ybm" secondAttribute="leading" constant="25" id="341-oT-6to"/>
-                                            <constraint firstAttribute="trailing" secondItem="onj-si-ISi" secondAttribute="trailing" constant="25" id="9ee-Iv-T94"/>
-                                            <constraint firstAttribute="trailing" secondItem="Qum-lm-cJC" secondAttribute="trailing" constant="25" id="BVo-Pj-ii4"/>
-                                            <constraint firstItem="7hu-Mc-wei" firstAttribute="leading" secondItem="TWX-ll-Ybm" secondAttribute="leading" constant="25" id="KRb-11-Ara"/>
-                                            <constraint firstItem="7hu-Mc-wei" firstAttribute="top" secondItem="hZL-8m-AZI" secondAttribute="bottom" constant="8" id="MxH-iH-jYc"/>
-                                            <constraint firstItem="hZL-8m-AZI" firstAttribute="top" secondItem="TWX-ll-Ybm" secondAttribute="topMargin" constant="13" id="XIR-ah-aLI"/>
-                                            <constraint firstItem="onj-si-ISi" firstAttribute="top" secondItem="TWX-ll-Ybm" secondAttribute="topMargin" constant="2" id="ri1-wd-6Ty"/>
-                                            <constraint firstAttribute="bottom" secondItem="Qum-lm-cJC" secondAttribute="bottom" id="vLX-Ck-2TP"/>
-                                            <constraint firstItem="hZL-8m-AZI" firstAttribute="leading" secondItem="TWX-ll-Ybm" secondAttribute="leading" constant="25" id="yJB-tM-QQV"/>
-                                        </constraints>
-                                        <size key="customSize" width="375" height="80"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="KpQ-rH-aVj" customClass="ReviewCell" customModule="AppyHour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="760" width="375" height="227"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenny Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgL-7j-5Ap">
-                                                    <rect key="frame" x="83" y="31" width="259" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="14"/>
-                                                    <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hBT-8N-fOI">
-                                                    <rect key="frame" x="25" y="77" width="325" height="110"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">My Boyfriend and I stopped by for happy hour. The ambiance is nice, and the selections are wonderful. Their small plates are to die for. Great price for the experience. Happy Hour here is the best!</string>
-                                                    <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-NZ-Ia1">
-                                                    <rect key="frame" x="25" y="187" width="129" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="KMJ-0d-lj3"/>
-                                                        <constraint firstAttribute="width" constant="129" id="YEh-hT-zGj"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkv-zA-57s">
-                                                    <rect key="frame" x="0.0" y="226" width="375" height="1"/>
-                                                    <color key="backgroundColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="y7h-We-6mD"/>
-                                                    </constraints>
-                                                </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="Hn9-c5-OMm">
-                                                    <rect key="frame" x="33" y="22" width="35" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="S0e-bG-9O3"/>
-                                                        <constraint firstAttribute="width" constant="35" id="mKk-VH-z80"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="wkv-zA-57s" firstAttribute="top" secondItem="Jvo-NZ-Ia1" secondAttribute="bottom" constant="20" id="1Xl-4i-wYC"/>
-                                            <constraint firstItem="hBT-8N-fOI" firstAttribute="top" secondItem="Hn9-c5-OMm" secondAttribute="bottom" constant="20" id="6cV-bk-JbW"/>
-                                            <constraint firstAttribute="trailing" secondItem="wkv-zA-57s" secondAttribute="trailing" id="9H7-Br-dGz"/>
-                                            <constraint firstAttribute="bottom" secondItem="wkv-zA-57s" secondAttribute="bottom" id="Cqp-vS-COV"/>
-                                            <constraint firstItem="Jvo-NZ-Ia1" firstAttribute="top" secondItem="hBT-8N-fOI" secondAttribute="bottom" id="FB0-ay-yOv"/>
-                                            <constraint firstItem="Hn9-c5-OMm" firstAttribute="leading" secondItem="KpQ-rH-aVj" secondAttribute="leadingMargin" constant="25" id="Gmn-00-SnP"/>
-                                            <constraint firstItem="wkv-zA-57s" firstAttribute="leading" secondItem="KpQ-rH-aVj" secondAttribute="leading" id="ReQ-iI-NYO"/>
-                                            <constraint firstItem="RgL-7j-5Ap" firstAttribute="centerY" secondItem="Hn9-c5-OMm" secondAttribute="centerY" id="Ulz-Ve-RRf"/>
-                                            <constraint firstItem="Hn9-c5-OMm" firstAttribute="top" secondItem="KpQ-rH-aVj" secondAttribute="top" constant="22" id="VCH-GU-OMl"/>
-                                            <constraint firstItem="RgL-7j-5Ap" firstAttribute="leading" secondItem="Hn9-c5-OMm" secondAttribute="trailing" constant="15" id="W34-Jx-Bl5"/>
-                                            <constraint firstItem="Jvo-NZ-Ia1" firstAttribute="leading" secondItem="KpQ-rH-aVj" secondAttribute="leading" constant="25" id="WKl-5W-bpS"/>
-                                            <constraint firstAttribute="trailing" secondItem="hBT-8N-fOI" secondAttribute="trailing" constant="25" id="glH-pC-qoC"/>
-                                            <constraint firstItem="hBT-8N-fOI" firstAttribute="leading" secondItem="KpQ-rH-aVj" secondAttribute="leading" constant="25" id="k3A-MC-lOa"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="RgL-7j-5Ap" secondAttribute="trailing" constant="25" id="sEV-xL-x34"/>
-                                        </constraints>
-                                        <size key="customSize" width="375" height="227"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jmL-3Q-8Tw" firstAttribute="leading" secondItem="hKc-Z5-A2I" secondAttribute="leading" id="Msb-8u-3of"/>
-                            <constraint firstItem="jmL-3Q-8Tw" firstAttribute="top" secondItem="hKc-Z5-A2I" secondAttribute="top" constant="-20" id="cZ5-WL-15k"/>
-                            <constraint firstAttribute="trailing" secondItem="jmL-3Q-8Tw" secondAttribute="trailing" id="dU6-dF-J7r"/>
-                            <constraint firstItem="CMm-Xl-j7f" firstAttribute="bottom" secondItem="jmL-3Q-8Tw" secondAttribute="bottom" id="t8b-Mq-qYp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="CMm-Xl-j7f"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="1230"/>
-                    <connections>
-                        <outlet property="detailsCollectionView" destination="jmL-3Q-8Tw" id="7eQ-HM-EC2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IFz-0i-S49" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nZH-2D-WBz">
+                            <size key="itemSize" width="374" height="300"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationDetailsImageCell" id="fC6-eq-lUj" customClass="LocationDetailsImageCell" customModule="AppyHour" customModuleProvider="target">
+                                <rect key="frame" x="0.5" y="0.0" width="374" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGx-Vw-gTC">
+                                            <rect key="frame" x="33" y="58" width="308" height="29"/>
+                                            <fontDescription key="fontDescription" name="Orkney-Regular" family="Orkney" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="sGx-Vw-gTC" firstAttribute="top" secondItem="fC6-eq-lUj" secondAttribute="topMargin" constant="50" id="djT-mw-AYP"/>
+                                    <constraint firstItem="sGx-Vw-gTC" firstAttribute="leading" secondItem="fC6-eq-lUj" secondAttribute="leadingMargin" constant="25" id="mKB-sy-QlU"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="sGx-Vw-gTC" secondAttribute="trailing" constant="25" id="xxr-pQ-snS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="testLabel" destination="sGx-Vw-gTC" id="5Yy-eb-gSd"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ytG-8G-Ca9" id="0TQ-6v-2xy"/>
+                            <outlet property="delegate" destination="ytG-8G-Ca9" id="5AL-Xk-bbm"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-nj-qfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="248"/>
+            <point key="canvasLocation" x="885.60000000000002" y="-5.8470764617691158"/>
         </scene>
     </scenes>
     <resources>
-        <image name="buttonOverlay" width="375" height="240"/>
-        <image name="call" width="18" height="18"/>
-        <image name="face" width="70" height="70"/>
-        <image name="getDirections" width="11" height="11"/>
-        <image name="mapOverlay" width="375" height="125"/>
         <image name="plus_photo" width="150" height="150"/>
-        <image name="restaurant4" width="374" height="240"/>
-        <image name="stars" width="129" height="19"/>
     </resources>
 </document>

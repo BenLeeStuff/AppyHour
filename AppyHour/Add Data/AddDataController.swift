@@ -67,8 +67,9 @@ class AddDataController: UIViewController,   UIImagePickerControllerDelegate, UI
         var ref: DatabaseReference!
         ref = Database.database().reference()
         
-        let fileName = NSUUID().uuidString
-        Storage.storage().reference().child("LocationImages").child(fileName).putData(uploadData, metadata: nil) { (metadata, err) in
+        let imageFileName = NSUUID().uuidString
+        let happyHourNodeName = NSUUID().uuidString
+        Storage.storage().reference().child("LocationImages").child(imageFileName).putData(uploadData, metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Failed to save location image to Storage: ", err)
             }
@@ -76,10 +77,9 @@ class AddDataController: UIViewController,   UIImagePickerControllerDelegate, UI
             guard let locationImageUrl = metadata?.downloadURL()?.absoluteString else {return}
             print("Successfully uploaded image", locationImageUrl)
             
-            let values = ["Address": address, "PhoneNumber": phoneNumber, "Hours": hours, "LocationDetails": locationDetails, "HappyHourDetails": happyHourDetails, "LocationImageUrl": locationImageUrl]
+            let values = ["Name": name, "Address": address, "PhoneNumber": phoneNumber, "Hours": hours, "LocationDetails": locationDetails, "HappyHourDetails": happyHourDetails, "LocationImageUrl": locationImageUrl]
             
-            ref.child("HappyHour").child("Location")
-                .child(name).updateChildValues(values) { (err, ref) in
+            ref.child("HappyHour").child(happyHourNodeName).updateChildValues(values) { (err, ref) in
                     if let err = err {
                         print("Failed to save values to database: ", err)
                     }
