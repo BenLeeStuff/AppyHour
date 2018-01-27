@@ -49,7 +49,7 @@ class RecommendedSectionCell: UICollectionViewCell, UICollectionViewDelegate, UI
         
         
         addSubview(titleLabel)
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 25, paddingRight: 0, width: 0, height: 28)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 30, paddingBottom: 25, paddingRight: 0, width: 0, height: 28)
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

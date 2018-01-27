@@ -36,9 +36,13 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
         return label
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        print("init framed")
+        NotificationCenter.default.addObserver(forName: REFRESH_CELL_NOTIFICATION, object: nil, queue: nil) { (notification) in
+            self.refreshCells()
+        }
+        
         setupViews()
         fetchHappyHours()
         
@@ -46,7 +50,7 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
     
     var happyHours = [HappyHour]()
     
-    fileprivate func fetchHappyHours() {
+    func fetchHappyHours() {
         
         let ref = Database.database().reference().child("HappyHour")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -68,6 +72,13 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
         }
     }
     
+    func refreshCells() {
+        
+        happyHours.removeAll()
+        fetchHappyHours()
+        feedController?.refreshControl.endRefreshing()
+    }
+    
     func setupViews() {
         addSubview(sectionCollectionView)
         sectionCollectionView.delegate = self
@@ -78,12 +89,13 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
         sectionCollectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         addSubview(titleLabel)
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 25, paddingRight: 0, width: 0, height: 28)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 0, height: 28)
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("NUMBER OF HAPPY HOURS: ", happyHours.count)
+        //print("NUMBER OF HAPPY HOURS: ", happyHours.count)
         return happyHours.count
     }
     
@@ -91,12 +103,10 @@ class FeaturedSectionCell: UICollectionViewCell, UICollectionViewDataSource, UIC
             let cell = sectionCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeaturedCell
             cell.happyHour = happyHours[indexPath.item]
             return cell
-        
- 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 280, height: 347)
+        return CGSize(width: 280, height: 330)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -192,11 +202,6 @@ class FeaturedCell: UICollectionViewCell {
     
     fileprivate func setupViews() {
         backgroundColor = .white
-//        addSubview(shadowImageView)
-//        shadowImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 125, paddingLeft: 72, paddingBottom: 0, paddingRight: 0, width: 120, height: 135)
-//
-//        addSubview(blurView)
-//        blurView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         addSubview(shadowView)
         shadowView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 70, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 230, height: 230)
@@ -204,7 +209,10 @@ class FeaturedCell: UICollectionViewCell {
         shadowView.addSubview(locationImageView)
         locationImageView.anchor(top: shadowView.topAnchor, left: shadowView.leftAnchor , bottom: shadowView.bottomAnchor, right: shadowView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
-        shadowView.updateShadow()
+        //shadowView.updateShadow()
+        DispatchQueue.main.async {
+            self.shadowView.updateShadow()
+        }
         
         addSubview(overlayImageView)
         overlayImageView.anchor(top: locationImageView.topAnchor, left: locationImageView.leftAnchor, bottom: locationImageView.bottomAnchor, right: locationImageView.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

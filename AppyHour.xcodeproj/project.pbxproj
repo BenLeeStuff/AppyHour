@@ -39,6 +39,7 @@
 		78A3CD4B1FF1FB5D00BDA624 /* LocationDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD4A1FF1FB5D00BDA624 /* LocationDetailsCell.swift */; };
 		78A3CD4D1FF2157200BDA624 /* ReviewsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD4C1FF2157200BDA624 /* ReviewsTitleCell.swift */; };
 		78A3CD4F1FF21D5D00BDA624 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3CD4E1FF21D5D00BDA624 /* ReviewCell.swift */; };
+		B5C476D61FFA161700C24BB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C476D51FFA161700C24BB6 /* Constants.swift */; };
 		C01FC3A034550858670F3E90 /* Pods_AppyHourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A804E20E92AFA063D723C9A /* Pods_AppyHourTests.framework */; };
 		D113DA8C76CC32CFF8740B48 /* Pods_AppyHour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92077193D4985438D55B6315 /* Pods_AppyHour.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		92077193D4985438D55B6315 /* Pods_AppyHour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppyHour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33492CAD157B76A2C113496 /* Pods-AppyHourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppyHourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppyHourTests/Pods-AppyHourTests.release.xcconfig"; sourceTree = "<group>"; };
 		ABD293C31ED1159F143F21B5 /* Pods-AppyHour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppyHour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppyHour/Pods-AppyHour.debug.xcconfig"; sourceTree = "<group>"; };
+		B5C476D51FFA161700C24BB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE51B1B1CBA06200FDC35CFF /* Pods-AppyHourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppyHourUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppyHourUITests/Pods-AppyHourUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,19 +180,16 @@
 		783EAE6F1FF0C9D200746196 /* AppyHour */ = {
 			isa = PBXGroup;
 			children = (
+				B5C476D71FFA5D5E00C24BB6 /* Fonts */,
+				B5C476D41FFA15F600C24BB6 /* Utils */,
 				789AB8A31FF337620048DBB6 /* Add Data */,
 				78A3CD3F1FF1DDE000BDA624 /* Details */,
-				78A3CD301FF1D68200BDA624 /* ShadowView */,
 				78A3CD3D1FF1DC1200BDA624 /* Feed */,
-				7857B9871FF0CCFD001F2815 /* orkney */,
 				783EAE701FF0C9D200746196 /* AppDelegate.swift */,
 				783EAE741FF0C9D200746196 /* Main.storyboard */,
 				783EAE771FF0C9D200746196 /* Assets.xcassets */,
 				783EAE791FF0C9D200746196 /* LaunchScreen.storyboard */,
 				783EAE7C1FF0C9D200746196 /* Info.plist */,
-				783EAE9E1FF0CABB00746196 /* Extensions.swift */,
-				785714BD1FF4E66B00E1C20D /* HappyHour.swift */,
-				785714C11FF611B800E1C20D /* CustomImageView.swift */,
 			);
 			path = AppyHour;
 			sourceTree = "<group>";
@@ -257,6 +256,26 @@
 				78A3CD4E1FF21D5D00BDA624 /* ReviewCell.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B5C476D41FFA15F600C24BB6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				78A3CD301FF1D68200BDA624 /* ShadowView */,
+				783EAE9E1FF0CABB00746196 /* Extensions.swift */,
+				785714BD1FF4E66B00E1C20D /* HappyHour.swift */,
+				785714C11FF611B800E1C20D /* CustomImageView.swift */,
+				B5C476D51FFA161700C24BB6 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B5C476D71FFA5D5E00C24BB6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7857B9871FF0CCFD001F2815 /* orkney */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BB873C6390656133683237F0 /* Frameworks */ = {
@@ -560,6 +579,7 @@
 				78A3CD211FF1A4F600BDA624 /* GoinOnNowSectionCell.swift in Sources */,
 				785714C41FF7384B00E1C20D /* DetailsController.swift in Sources */,
 				78A3CD4B1FF1FB5D00BDA624 /* LocationDetailsCell.swift in Sources */,
+				B5C476D61FFA161700C24BB6 /* Constants.swift in Sources */,
 				78A3CD231FF1B73000BDA624 /* RecommendedSectionCell.swift in Sources */,
 				783EAE731FF0C9D200746196 /* FeedController.swift in Sources */,
 				785714C21FF611B800E1C20D /* CustomImageView.swift in Sources */,
@@ -749,7 +769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben.lee.AppyHour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -765,7 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben.lee.AppyHour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

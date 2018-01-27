@@ -17,11 +17,21 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let featuredCellId = "feedCell"
     let goingOnNowCellId = "goingOnNowSectionCell"
     let recommendedCellId = "recommendedSectionCell"
-    
+    let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        feedCollectionView?.refreshControl = refreshControl
+        
         setupViews()
     }
+    
+    @objc func handleRefresh() {
+        NotificationCenter.default.post(name: REFRESH_CELL_NOTIFICATION, object: nil)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -53,6 +63,7 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 3
     }
     
+    
     func showDetailForHappyHour(happyHour: HappyHour) {
         let layout = UICollectionViewFlowLayout()
         let detailsController = DetailsController(collectionViewLayout: layout)
@@ -70,6 +81,7 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return cell
         } else if indexPath.item == 1 {
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: goingOnNowCellId, for: indexPath) as! GoingOnNowSectionCell
+            cell.feedController = self
             return cell
         } else {
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: recommendedCellId, for: indexPath) as! RecommendedSectionCell

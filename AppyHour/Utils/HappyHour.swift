@@ -26,9 +26,23 @@ struct HappyHour {
         self.happyHourDetails = dictionary["HappyHourDetails"] as? String ?? "Happy Hour details are unavailable"
         self.hours = dictionary["Hours"] as? String ?? ""
         self.locationDescription = dictionary["LocationDetails"] as? String ?? ""
-        
     }
 }
+
+struct HappyHourTime {
+    let startTimeHour: String
+    let startTimeMinute : String
+    let endTimeHour: String
+    let endTimeMinute: String
+    
+    init(dictionary: [String: Any]) {
+        self.startTimeHour = dictionary["StartHour"] as? String ?? ""
+        self.startTimeMinute = dictionary["StartMinutes"] as? String ??  ""
+        self.endTimeHour = dictionary["EndHour"] as? String ?? ""
+        self.endTimeMinute = dictionary["EndMinutes"] as? String ?? ""
+    }
+}
+
 
 
 
