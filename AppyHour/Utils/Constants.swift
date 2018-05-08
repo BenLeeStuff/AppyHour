@@ -13,3 +13,4 @@ let REFRESH_CELL_NOTIFICATION = NSNotification.Name("RefreshCells")
 
 let APPY_HOUR_BLACK = UIColor.rgb(red: 50, green: 59, blue: 69)
 
+

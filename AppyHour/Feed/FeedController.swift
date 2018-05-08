@@ -14,7 +14,7 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var feedCollectionView: UICollectionView!
 
-    let featuredCellId = "feedCell"
+    let featuredCellId = "feedC ell"
     let goingOnNowCellId = "goingOnNowSectionCell"
     let recommendedCellId = "recommendedSectionCell"
     let refreshControl = UIRefreshControl()
@@ -69,7 +69,6 @@ class FeedController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let detailsController = DetailsController(collectionViewLayout: layout)
         detailsController.happyHour = happyHour
         navigationController?.pushViewController(detailsController, animated: true)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
